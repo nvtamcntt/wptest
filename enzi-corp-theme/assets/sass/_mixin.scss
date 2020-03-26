@@ -1,0 +1,95 @@
+@charset "UTF-8";
+
+// ブレークポイントの設定
+$breakpoints: (
+	'ssp': 'screen and (max-width: 414px)',
+	'sp': 'screen and (max-width: 568px)',
+	'tb': 'screen and (max-width: 768px)',
+	'spc': 'screen and (max-width: 1000px)',
+	'pc': 'screen and (max-width: 1280px)',
+) !default;
+
+$breakpoints_up: (
+		'sp': 'screen and (min-width: 569px)',
+		'tb': 'screen and (min-width: 769px)',
+		'pc': 'screen and (min-width: 1281px)',
+) !default;
+
+@mixin mq($breakpoint: tb) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+@mixin mq_up($breakpoint: tb) {
+	@media #{map-get($breakpoints_up, $breakpoint)} {
+		@content;
+	}
+}
+
+
+// リンクカラー
+@mixin link-color($color) {
+	color: $color;
+	text-decoration: none;
+
+	&:hover {
+		color: lighten($color, 15%);
+		text-decoration: underline;
+	}
+	
+	&:visited {
+		color: $color;
+	}
+}
+ 
+
+// border-radius
+@mixin radius($size) {
+	@include border-radius($size + px);
+}
+
+@mixin border-radius-per($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+} // @include border-radius-per(100%);
+
+
+// Position
+@mixin abs-position ($top: auto, $right: auto, $bottom: auto, $left: auto) {
+	position: absolute;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin letter-spacing($tracking) {
+	letter-spacing: $tracking / 1000 * 1em;
+}
+
+@mixin transform-inherit() {
+	-webkit-transform: inherit;
+	transform: inherit;
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@keyframes $name {
+		@content;
+	}
+}
+
+// @mixin flex-row() {
+// 	@include display-flex();
+// 	@include flex-direction(row);
+// }
+
+@mixin flex-row($justify: space-between) {
+	@include display-flex();
+	@include flex-direction(row);
+	@include justify-content($justify);
+}

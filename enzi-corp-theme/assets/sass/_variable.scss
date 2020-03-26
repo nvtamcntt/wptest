@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+// ---- テーマの基本スタイル ----
+
+// メインカラー
+$main-color: #8abc00;
+$sub-color: #003c9f;
+
+// 標準背景色
+$bg-color: #EEEEEE;
+
+// 標準フォントカラー
+$base-font-color: #000000;
+
+// リンクカラー
+$color-link: #000000;
+$color-link-hover: #CCCCCC;
+
+// フォント指定
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500,700');
+$base-font-family: 'Noto Sans JP', "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "游ゴシック体", "Yu Gothic", YuGothic, "メイリオ", "Meiryo", 'Roboto', sans-serif;
+
+// 標準ボーダーカラー
+$border-color: #EEEEEE;
+
+// ボックス
+$box: #e1e1e1;
+
+
+// ---- レイアウト系 ----
+
+// PC版wrapperの横幅
+$width-wraper: 1030px;

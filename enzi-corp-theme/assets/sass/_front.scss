@@ -1,0 +1,399 @@
+@charset "utf-8";
+
+// ------------ FRONT ------------
+
+// トップページ
+div.front {
+
+	// nav ul li.parent_menu:hover ul.sub_menu {
+	// 	border: 1px solid #eee;
+	// 	li {
+	// 		& + li {
+	// 			border-top: 1px solid #eee;
+	// 		}
+	// 		a {
+	// 			padding: 7px 7px;
+	// 		}
+	// 	}
+
+	// 	@include mq() {
+	// 		border: 0;
+	// 		li {
+	// 			& + li {
+	// 				border-top : 0;
+	// 			}
+	// 			a {
+	// 				opacity: 1;
+	// 				padding-top: 10px;
+	// 				padding-bottom: 10px;
+	// 			}
+	// 		}
+	// 	}
+	// } 
+	
+	// BASS LAYOUT
+	main {
+		
+		section {
+			overflow: hidden;
+			article {
+				@extend %clearfix;
+
+				h2.ttl {
+					margin-bottom: 30px;
+					@include mq() {
+						margin-bottom: 20px;
+					}
+					@include mq(sp) {
+						margin-bottom: 10px;
+					}
+				}
+
+				h3.copy {
+					@extend .font_size_26;
+					font-weight: 700;
+					letter-spacing: 0.2em;
+					margin-bottom: 30px;
+					@include mq() {
+						margin-bottom: 20px;
+					}
+					@include mq(sp) {
+						margin-bottom: 10px;
+					}
+					@include mq(ssp) {
+						font-size: 18px;
+					}
+				}
+
+
+				.bg_box_right, .bg_box_left {
+					div.btn {
+						margin-top: 40px;
+						@include mq() {
+							margin-top: 20px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	
+	div.kv {
+		background-image: url("../img/content/front/bg_top_kv.jpg");
+		background-size: cover;
+		background-position: bottom center;
+		position: relative;
+		z-index: 1;
+		overflow: hidden;
+		width: 100%;
+		height: 100vh;
+
+		div.particles {
+			//height: 450px;
+			height: 55%;
+			width: 100%;
+			position: absolute;
+			//bottom: -70px;
+			bottom: -5%;
+			left: 0;
+			z-index: -1;
+
+			&#bg_particles {
+				// height: 350px;
+				// bottom: -50px;
+				height: 45%;
+				bottom: -4%;
+			}
+
+			@include mq() {
+				// height: 300px;
+				// bottom: -50px;
+				&#bg_particles {
+					// height: 250px;
+				}
+			}
+		}
+
+		.kv_inner {
+			//padding: 300px 0;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top: 45%;
+			@include translate(0, -50%);
+
+			@include mq() {
+				// padding: 150px 0 200px;
+			}
+
+			img {
+				max-width: 560px;
+				width: 80%;
+				margin: 0 auto;
+				@include mq() {
+				}
+			}
+			p {
+				margin-top: 10px;
+				@extend .font_size_16;
+				font-weight: 300;
+				letter-spacing: 0.1em;
+			}
+			
+		}
+	}
+
+	//　サービス紹介
+	section.service {
+		padding-top: 50px;
+		position: relative;
+		overflow: hidden;
+
+		@include mq() {
+			padding-top: 30px;
+		}
+
+		&:after {
+			content: "";
+			width: 55%;
+			height: 0;
+			padding-top: 40%;
+			background-image: url("../img/content/front/fig_top_service.png");
+			background-size: 100%;
+			position: absolute;
+			top: 150px;
+			right: -1.5%;
+			background-repeat: no-repeat;
+
+			@include mq(pc) {
+				top: 250px;
+			}
+			@include mq() {
+				width: 50%;
+			}
+		}
+		article {
+			padding-top: 0;
+			
+			div.both_side_line.service_top {
+				padding-top: 0;
+			}
+
+
+		}
+
+		.service_intro {
+			.service_intro_1col {
+				@include flex-row(space-between);
+				padding-bottom: 70px;
+
+				@include mq() {
+					padding-bottom: 50px;
+				}
+
+				@include mq(sp) {
+					padding-bottom: 30px;
+				}
+
+				.image_cont {
+					width: 38%;
+				}
+				.nav_cont {
+					width: 54%;
+					position: relative;
+
+					.inner {
+						position: absolute;
+						width: 440px;
+						left: 0;
+						bottom: 0;
+						z-index: 1;
+
+						@include mq() {
+							width: 100%;
+						}
+						@include mq(sp) {
+							position: static;
+							padding: 20px 0 0;
+							width: 95%;
+    						margin: 0 auto;
+						}
+						
+					}
+				}
+				div.btn {
+					margin-top: 100px;
+
+					@include mq() {
+						margin-top: 50px;
+					}
+					@include mq(sp) {
+						margin-top: 20px;
+					}
+				}
+
+				@include mq(sp) {
+					@include flex-direction(column);
+					.image_cont, .nav_cont {
+						width: 100%;
+					}
+				}
+			}
+			
+			.service_intro_2col {
+				padding-bottom: 50px;
+				@include flex-row(space-between);
+
+				.col {
+					width: 47%;
+					.nav_cont {
+						.inner {
+							padding: 40px 0 0;
+							width: 85%;
+							margin: 0 auto;
+
+						}
+					}
+					@include mq() {
+						width: 48%;
+						.nav_cont {
+							.inner {
+								width: 95%;
+								padding-top: 20px;
+							}
+						}
+					}
+				}
+				
+				@include mq(sp) {
+					@include flex-direction(column);
+					.col {
+						width: 100%;
+
+						& + .col {
+							margin-top: 30px;
+						}
+					}
+				}
+			}
+
+			p.service_no {
+				color: $main-color;
+				letter-spacing: 0.075em;
+			}
+			h3 {
+				margin: 20px 0;
+				a {
+					color: #000;
+				}
+				@include mq() {
+					margin: 10px 0;
+				}
+			}
+			div.btn {
+				margin-top: 40px;
+				@include mq() {
+					margin-top: 20px;
+				}
+			}
+		}
+
+
+	}
+
+	section.company {
+		position: relative;
+		&:before {
+			content: "";
+			width: 700px;
+			height: 800px;
+			background-image: url("../img/content/front/fig_top_company.png");
+			background-size: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			background-repeat: no-repeat;
+
+			@media screen and (max-width: 1500px) {
+				left: inherit;
+				right: 54%;
+			}
+
+			@include mq() {
+				width: 60vw;
+				height: 70vw;
+				top: 50%;
+				@include translate(0, -40%);
+			}
+		}
+
+		article {
+			.bg_box_right {
+				div.btn {
+					@include mq() {
+						margin: 20px auto 0 0;
+					}
+				}
+			}
+		}
+	}
+	
+	// お知らせ一覧
+	section.news {
+
+		.both_side_line {
+			padding-bottom: 100px;
+			@include mq() {
+				padding-bottom: 60px;
+			}
+		}
+
+		ul {
+			max-width: 800px;
+		}
+		
+		div.btn {
+			margin-top: 40px;
+			@include mq() {
+				margin-top: 20px;
+			}
+		}
+
+	}
+
+	// 採用情報
+	section.recruit {
+		article {
+			.both_side_line {
+				padding-bottom: 100px;
+				@include mq() {
+					padding-bottom: 60px;
+				}
+			}
+			.bg_box_left {
+				background-image: url(../img/content/front/bg_top_recruit.jpg);
+				background-size: cover;
+				background-position: right top;
+
+				h2.ttl, h2.ttl span, p {
+					color: #fff !important;
+				}
+
+
+				@include mq() {
+
+					div.btn {
+						margin: 20px auto 0 0;
+					}
+				}
+				@include mq(ssp) {
+					.inner {
+						padding-right: 5%;
+					}
+				}
+			}
+		}
+	}
+}

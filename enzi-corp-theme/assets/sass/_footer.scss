@@ -1,0 +1,79 @@
+@charset "utf-8";
+
+// ------------ FOOTER ------------*/
+
+footer {
+	width: 100%;
+	padding: 40px 0;
+	margin: auto;
+	text-align: center;
+
+	// Logo
+	div.logo {
+		padding: 0;
+		
+		img {
+			width: 150px;
+			height: auto;
+			margin: auto;
+		}
+	}
+	
+	// a {
+	// 	@include link-color(#666);
+
+	// 	&:hover {
+	// 		text-decoration: underline;
+	// 	}
+	// }
+	
+	// ナビゲーション
+	section.nav {
+		padding: 0 !important;
+		ul {
+			@include flex-row(center);
+			li {
+				display: inline-block;
+				width: auto;
+				padding: 15px;
+
+				@include mq(ssp) {
+					padding: 15px 10px;
+				}
+
+				a {
+					@extend .font_size_12;
+					font-weight: 500;
+					letter-spacing: 0.2em;
+				}
+			}
+		}
+	}
+
+
+	// ドキュメントリンク
+	section.copyright {
+		padding: 10px 0 0 !important;
+
+		// ul {
+		// 	width: 100%;
+		// 	text-align: center;
+		// 	margin: auto;
+
+		// 	li {
+		// 		display: inline-block;
+		// 		padding: 0 10px;
+		// 		@extend .font_size_14;
+				
+		// 		@include mq(sp) {
+		// 			padding: 0 5px;
+		// 		}
+		// 	}
+		// }
+		
+		p {
+			@extend .font_size_10;
+			color: #9091a2;
+		}
+	}
+}

@@ -1,0 +1,645 @@
+@charset "utf-8";
+
+// ------------ FORM ------------
+
+// フォーム
+div.form {
+	
+	// BASS LAYOUT
+	main {
+
+		.section_head{
+			padding: 80px 0;
+			text-align: center;
+			background-image: url("../img/content/article/bg_contact_head.jpg");
+			background-size: cover;
+
+			h2.ttl, p{
+				color: #fff;
+			}
+
+			h2.ttl{
+				margin-bottom: 20px;
+			}
+
+			@include mq() {
+				padding: 40px 0;
+
+				h2.ttl{
+					margin-bottom: 10px;
+				}
+			}
+
+			div.tel{
+				a {
+					display: block;
+					width: 70%;
+					max-width: 275px;
+					margin: 20px auto 2px;
+				}
+				img.image_tel{
+					// width: auto;
+					// max-width: 70%;
+					// margin: 20px auto 2px;
+
+					@include mq(sp) {
+						margin: 10px auto 2px;
+					}
+				}
+
+				span{
+					color: #fff;
+					@extend .font_size_12;
+				}
+			}
+		}
+		
+		section {
+			padding: 80px 0 0;
+
+			@include mq() {
+				padding: 40px 0 0;
+			}
+
+			// table
+			table {
+				max-width: 800px;
+				min-width: inherit;
+				tr {
+					&:last-child th,
+					&:last-child td {
+						border-bottom: none;
+					}
+
+					th,
+					td {
+						@extend .font_size_14;
+						padding: 20px 0 20px 30px;
+						text-align: left;
+						vertical-align: top;
+						border-bottom: #bfbfbf 1px solid;
+
+						@include mq() {
+							border: none;
+						}
+					}
+
+					th {
+						width: 31%;
+						padding: 20px 15px;
+						background-color: #eee;
+						vertical-align: middle;
+
+						@include mq() {
+							width: 100%;
+							padding: 10px;
+						}
+						
+						p {
+							display: inline-block;
+							vertical-align: middle;
+							word-break: break-all;
+						}
+					}
+
+					td {
+
+						@include mq() {
+							padding: 10px 10px 20px 10px;
+						}
+					}
+				}
+			}
+			
+			p {
+				// アナウンステキスト
+				&.head {
+					padding: 20px 0;
+					@extend .wrapper;
+				}
+				
+				&.closing {
+					padding: 20px 0 20px 0;
+					text-align: center !important;
+					@extend .wrapper;
+				}
+			}
+			
+			// 注釈
+			span.arrow {
+				font-size: 90%;
+				margin: 5px 0;
+				font-weight: bold;
+				display: inline-block;
+			}
+
+			// ボタンを並べる
+			ul.transmission {
+				width: auto;
+				text-align: center;
+				margin: 0 auto 30px auto;
+				display: table;
+				
+				&.transmission_confirm{
+					margin: 50px auto 100px auto;
+				}
+				@include mq(sp) {
+					width: 95%;
+					display: inherit;
+
+					&.transmission_confirm{
+						margin: 30px auto 30px auto;
+					}
+				}
+
+				li {
+					display: table-cell;
+					padding: 2px 5px;
+
+					@include mq(sp) {
+						display: block;
+					}
+				}
+			}
+
+			// 項目を分割
+			ul.break {
+				width: 100%;
+				display: table;
+
+				@include mq(sp) {
+					display: inherit;
+				}
+
+				li {
+					display: table-cell;
+					padding: 0 5px;
+
+					&:nth-child(1) {
+						padding: 0 5px 0 0;
+
+						@include mq(sp) {
+							padding: 0;
+						}
+					}
+
+					&:last-child {
+						padding: 0 0 0 5px;
+
+						@include mq(sp) {
+							padding: 0;
+						}
+					}
+
+					@include mq(sp) {
+						display: inherit;
+						padding: 0;
+					}
+				}
+			}
+
+			// 項目を並べる
+			ul.variable {
+				width: 100%;
+
+				li {
+					display: inline-block;
+					padding: 0 5px;
+
+					&:last-child {
+						padding: 0 0 0 5px;
+
+						@include mq(sp) {
+							padding: 0;
+						}
+					}
+
+					&:nth-child(1) {
+						padding: 0 5px 0 0;
+
+						@include mq(sp) {
+							padding: 0;
+						}
+					}
+
+					@include mq(sp) {
+						display: inherit;
+						padding: 0;
+					}
+
+					input {
+						width: auto;
+						margin: 5px 10px 5px 0;
+					}
+				}
+			}
+
+			// チェックリストを並べる
+			ul.check_list {
+				width: 100%;
+
+				li {
+					width: 50%;
+					float: left;
+					padding: 5px 0;
+
+					@media only screen and (max-width:1000px){
+						width: 100%;
+						float: none;
+						border-bottom: $border-color 1px solid;
+					}
+				}
+			}
+			
+			// 郵便番号
+			ul.number {
+				display: table;
+
+				li {
+					display: table-cell;
+
+					&:nth-child(1) {
+
+						input {
+							width: 5em;
+						}
+					}
+
+					&:nth-child(2) {
+						input {
+							width: 7em;
+						}
+					}
+					
+					p {
+						display: inline-block;
+					}
+
+					span {
+						padding: 0 10px;
+					}
+				}
+			}
+
+
+			// 電話番号
+			ul.phone {
+				display: table;
+				table-layout: auto;
+
+				li {
+					display: table-cell;
+
+					&:nth-child(1) {
+
+						input {
+							width: 5em;
+						}
+					}
+
+					&:nth-child(2) {
+						input {
+							width: 6em;
+						}
+					}
+
+					&:nth-child(3) {
+						input {
+							width: 6em;
+						}
+					}
+					
+					p {
+						display: inline-block;
+					}
+
+					span {
+						padding: 0 10px;
+					}
+				}
+			}
+
+			// 完了画面のアナウンス
+			div.comp_box {
+				padding: 50px 0;
+				@extend .wrapper;
+
+				@include mq(sp) {
+					padding: 30px 0;
+				}
+
+				h2 {
+					font-weight: bold;
+					padding: 30px 0;
+					text-align: center;
+				}
+
+				p {
+					margin-bottom: 10px;
+				}
+			}
+		}
+		
+		// フローセクションバー
+		div.flow_nav {
+			width: 100%;
+			max-width: 1000px;
+			margin: 20px auto 50px;
+			background-color: #f5f5f5;
+
+			@include mq() {
+				margin: 10px auto 30px;
+			}
+
+			ul {
+				overflow: hidden;
+
+				li {
+					float: left;
+					position: relative;
+					width: 33.333%;
+					padding: 10px 0;
+					text-align: center;
+					background-color: #f5f5f5;
+					
+					&:before {
+						bottom: 0;
+						content: "";
+						height: 40px;
+						margin: auto;
+						position: absolute;
+						right: -15px;
+						top: 0;
+						-webkit-transform: rotate(-45deg);
+						-ms-transform: rotate(-45deg);
+						transform: rotate(-45deg);
+						width: 40px;
+						background-color: #f5f5f5;
+						z-index: 1;
+					}
+
+					&:last-child:before {
+						content: none;
+					}
+
+					span {
+						position:relative;
+						//z-index:100;
+						padding: 0 0 0 15px;
+						font-weight: bold;
+						@extend .font_size_14;
+					}
+				}
+				
+				&.front {
+					
+					li {
+						
+						&:nth-child(1) {
+							background-color: $sub-color;
+							color: #fff;
+							font-weight: bold;
+
+							&:before{
+								content: "";
+								margin: auto;
+								position: absolute;
+								right: -20px;
+								background-color: $sub-color;
+								border-bottom: none;
+								border-right: none;
+							}
+						}
+						
+						&:nth-child(2) {
+							&:before {
+								border-bottom: $border-color 1px solid;
+								border-right: $border-color 1px solid;
+							}
+						}
+					}
+				}
+				
+				&.confirm {
+					
+					li {
+						
+						&:nth-child(2) {
+							background-color: $sub-color;
+							color: #fff;
+							font-weight: bold;
+
+							&:before{
+								content: "";
+								margin: auto;
+								position: absolute;
+								right: -20px;
+								background-color: $sub-color;
+								border-bottom: none;
+								border-right: none;
+							}
+						}
+					}
+				}
+				
+				&.complete {
+					
+					li {
+						
+						&:nth-child(3) {
+							background-color: $sub-color;
+							color: #fff;
+							font-weight: bold;
+
+							&:before{
+								content: "";
+								margin: auto;
+								position: absolute;
+								right: -20px;
+								background-color: $sub-color;
+								border-bottom: none;
+								border-right: none;
+							}
+						}
+						
+						&:nth-child(1) {
+							&:before {
+								border-bottom: $border-color 1px solid;
+								border-right: $border-color 1px solid;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		// プライバシーポリシーに同意
+		div.agree_box {
+			width: 100%;
+			margin: 30px auto 0;
+			text-align: center;
+			padding: 50px 0;
+			background-color: $bg-color;
+			border-top: $border-color 1px solid;
+			border-bottom: $border-color 1px solid;
+			
+			@include mq(sp) {
+				margin: 0 auto;
+			}
+			
+			@include mq(sp) {
+				padding: 30px 0 10px 0;	
+			}
+			
+			p {
+				width: 85%;
+				max-width: 650px;
+				text-align: left;
+				margin: auto;
+				@extend .font_size_12;
+
+				&.color_blue{
+					color: $sub-color;
+					@extend .font_size_14;
+					text-align: center;
+					letter-spacing: -0.01em;
+					a {
+						color: $sub-color;
+						text-decoration: underline;
+					}
+				}
+			}
+
+			div.btn{
+				margin: 25px auto;
+			}
+				
+			// a {
+			// 	padding: 10px 50px;
+			// 	margin: 20px 0;
+			// 	display: inline-block;
+			// 	font-weight: bold;
+			// 	border: $border-color 1px solid;
+			// 	@include radius(5);
+				
+			// 	span {
+			// 		background-position: right center;
+			// 		background-image: url(../img/common/arrow/arrow_right_c.svg);
+			// 		background-size: 20px 20px;
+			// 		padding: 0 25px 0 0;
+			// 	}
+			// }
+			
+			// チェックリストを並べる
+			ul.check_list {
+				width: 100%;
+				max-width: 600px;
+				margin: 0 auto 20px;
+				@extend .font_size_14;
+
+				li {
+					width: auto;
+					float: none;
+					display: inline-block;
+					
+					@media only screen and (max-width:1000px){
+						border-bottom: none;
+					}
+				}
+			}
+			
+			h3 {
+				width: 100%;
+				max-width: 650px;
+				margin: 5px auto 0 auto;
+				padding: 30px 0 0 0;
+				border-top: #bfbfbf 1px solid;
+				font-weight: bold;
+				@extend .font_size_14;
+			}
+			
+			// エラーエリア
+			ul.error_access {
+				padding: 0;
+				max-width: 600px;
+				margin: 5px auto 0 auto;
+			}
+		}
+	}
+}
+
+
+// エラーエリア
+div.error_area {
+	margin: auto;
+	padding: 10px 0 0 0;
+	@extend .wrapper;
+}
+
+ul.error_list {
+	width: 90%;
+	margin: 0 auto 10px auto;
+	padding: 5px 0;
+	@extend .wrapper;
+
+	li {
+		display: block;
+		padding: 5px 10px;
+		font-weight: bold;
+		color: #BF292C;
+		border: #BF292C 2px solid;
+		margin: 5px auto;
+		text-align: center;
+		@include radius(5);
+	}
+}
+
+div.err_area,
+div.error_access {
+	margin: 5px auto;
+	padding: 5px 0;
+	display: block;
+
+	p {
+		display: block;
+		padding: 5px 10px;
+		font-weight: bold;
+		color: #BF292C;
+		border: #BF292C 1px solid;
+		margin: 5px auto;
+		text-align: center !important;
+		@extend .font_size_12;
+		@include radius(5);
+	}
+}
+
+div.err_area {
+	display: none;
+}
+
+ul.error_access {
+	width: 90%;
+	margin: 5px auto;
+	padding: 15px 0;
+	//display: none;
+
+	li {
+		display: block;
+		padding: 5px 10px;
+		font-weight: bold;
+		color: #BF292C;
+		border: #BF292C 1px solid;
+		margin: 5px auto;
+		text-align: center;
+		@extend .font_size_12;
+		@include radius(5);
+	}
+}
+
+
+p#fm_ajax_message {
+	font-weight: 700;
+	color: $main-color;
+	letter-spacing: 1px;
+	@extend .font_size_14;
+}

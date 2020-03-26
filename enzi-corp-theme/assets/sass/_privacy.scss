@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+// ------------ 記事一覧 ------------*/
+
+
+// プライバシーポリシー
+div.privacy {
+
+	section.privacy_head{
+		padding: 50px 0 30px;
+		background-color: #6c80a0;
+		div.text {
+			color: #fff;
+			letter-spacing: -0.03em;
+
+			p.tal_right{
+				text-align: right;
+			}
+		}
+	}
+
+	section.privacy_content{
+		padding: 30px 0 80px;
+		@include mq() {
+			padding: 30px 0 40px;
+		}
+	}
+	
+	article {
+		@extend .font_size_12;
+
+		div.text{
+			max-width: 800px;
+			margin: 0 auto;
+
+			@include mq() {
+				width: 100%;
+				max-width: inherit;
+			}
+		}
+
+		h2 {
+			color: #6c80a0;
+			padding: 20px 0 0;
+			margin: 0 0 5px 0;
+			font-weight: bold;
+			@extend .font_size_16;
+		}
+		
+		h3 {
+			padding: 10px 0 5px 0;
+			font-weight: 700;
+			@extend .font_size_16;
+		}
+		
+		p {
+			padding: 0 0 20px 0;
+
+			&.pb0{
+				padding-bottom: 0;
+			}
+		}
+		
+		ul {
+			width:100%;
+			margin:auto;
+			padding: 0 0 20px 30px;
+			
+			> li {
+				width:100%;
+				word-break:break-all;
+				padding: 0 0 5px;
+				list-style: decimal;
+
+				ul{
+					padding: 20px 0 20px 30px;
+					> li{
+						list-style: lower-latin;
+
+						ul{
+							padding-bottom: 0;
+							li{
+								list-style: lower-roman;
+							}
+						}
+					}
+				}
+			}
+		}
+		
+
+		table{
+			margin: auto 0 30px auto;
+			max-width: inherit;
+			min-width: inherit;
+
+			th,td{
+				font-weight: bold;
+				text-align: left;
+				vertical-align: top;
+				padding: 2px 0;
+			}
+
+			@include mq() {
+				th, td{
+					width: inherit;
+					display: table-cell;
+				}
+
+				th{
+					width: 70px;
+				}
+			}
+		}
+		// リンク設定
+		a {
+			&:link,
+			&:visited,
+			&:active {
+				color: $main-color;
+				text-decoration: underline;
+			}
+
+			&:hover {
+				color: $color-link-hover;
+			}
+		}
+	}
+}

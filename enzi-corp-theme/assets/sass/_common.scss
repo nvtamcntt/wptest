@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+// ------------ BASS ------------
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	
+	// PC表示は幅を最低限固定
+	min-width: 1000px;
+	margin: auto;
+	
+	@include mq() {
+		min-width: inherit;
+	}
+}
+
+body {
+	font-family: $base-font-family;
+	color: $base-font-color;
+	@extend .font_size_14;
+	letter-spacing: 0.1em;
+	font-weight: 400;
+}
+
+
+// ------------ BASS STYLE ------------
+
+// 選択テキストのカラー
+::selection { background: $main-color; color: #FFF; }
+::-moz-selection { background: $main-color; color: #FFF; }
+
+
+// リンク設定
+a {
+	@include link-color($color-link);
+	@extend .transitions;
+	-webkit-backface-visibility: hidden; 
+	backface-visibility: hidden;
+	
+	img {
+		@extend .transitions;
+	}
+	
+	&:hover img {
+		opacity: 0.8;
+	}
+}
+
+
+// 斜線
+hr {
+	height: 1px;
+	clear: both;
+	border: none;
+	border-top: $border-color 1px solid;
+	color: #FFF;
+}
+
+// clearfix
+%clearfix {
+	zoom:1;
+	&:after {
+		display: block;
+		content: "";
+		clear: both;
+	}
+}
+
+
+// ブロック要素のリンク
+%a_block {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+
+// ベースのコンテンツ幅
+.wrapper {
+	width: 95%;
+	max-width: 1030px;
+	min-width: 1000px;
+	padding: 0 15px;
+	margin: auto;
+	position: relative;
+	
+	// clearfix
+	@extend %clearfix;
+	
+	@include mq() {
+		min-width: inherit;
+		padding: 0;
+	}
+}
+
+
+
+// リンクエフェクト
+.transitions {
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	
+	@include mq() {
+		transition: all 0s ease;
+		-webkit-transition: all 0s ease;
+		-moz-transition: all 0s ease;
+		-o-transition: all 0s ease;
+	}
+}
+
+// モーションエフェクト
+.all_transitions {
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+}
+
+// 上下中央に配置
+.vertical {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translate(0%, -50%);
+	transform: translate(0%, -50%);
+}
+
+//高さ指定して中心でトリミング
+.obj_image {
+	object-fit: cover;
+	font-family: 'object-fit: cover;'
+}
+
+.hide_ssp {
+	@include mq(sp) {
+		display: none;
+	}
+}
+
+.hide_sp {
+	@include mq() {
+		display: none;
+	}
+}
+
+.hide_pc {
+	@include mq_up() {
+		display: none;
+	}
+}
+
+.tel_anchor {
+	pointer-events: none;
+	@include mq() {
+		pointer-events: inherit;
+	}
+}
+
+.display_none {
+	display: none;
+}
+
+
+
+
+// ------------ BASS STYLE ------------
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+br {
+	line-height: inherit;
+}
+
+// TABLE LAYOUT
+table {
+	width: 95%;
+	margin: auto;
+	border-collapse: collapse;
+	@extend .wrapper;
+	
+	tr {
+		
+		th,td {
+			
+			@media only screen and (max-width: 768px){
+				width: 100%;
+				display: block;
+			}
+		}
+
+		th {
+			// それぞれのセクションに記載。
+		}
+
+		td {
+			// それぞれのセクションに記載。
+		}
+	}
+}
