@@ -18,6 +18,7 @@ class FM_Class extends FM_Mail_Input {
     }
 }
 $cls = new FM_Class();
+
 ?>
 
 <form class="fm_action h-adr" action="<?php echo esc_url( home_url( '/contact/confirm' ) ); ?>" method="post">
