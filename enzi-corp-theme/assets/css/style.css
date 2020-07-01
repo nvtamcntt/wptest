@@ -3154,9 +3154,9 @@ div.service section.service_content ul.service_list li div.inner h4 p a {
   padding-left: 10px;
   /* -webkit-transform: translate(0%, -50%); */
   /* transform: translate(0%, -50%); */
-  /* background-size: 5px auto;
+  background-size: 6px auto;
   background-position: center left;
-  background-image: url("../img/common/arrow/arrow_right_w.svg"); */
+  background-image: url("../img/common/arrow/dot.svg");
 }
 
 @media screen and (max-width: 768px) {

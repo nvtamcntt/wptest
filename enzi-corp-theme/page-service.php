@@ -54,9 +54,9 @@
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/content/service/img_list_human.jpg" alt="人材ソリューション" class="obj_image">
                                                     <h4>HUMAN RESOURCES<br>SOLUTION
                                                         <span>人材ソリューション</span>
-                                                        <p><a href="<?php echo esc_url(home_url('/service/human-resources-solution')); ?>">ー女性のキャリア形成サポート部門</a></p>
-                                                        <p><a href="<?php echo esc_url(home_url('/service/human-resources-solution')); ?>">ーグローバル人材採用部門</a></p>
-                                                        <p><a href="<?php echo esc_url(home_url('/service/human-resources-solution')); ?>">ー湯灌師・納棺師（葬祭業）人材紹介部門</a></p>
+                                                        <p><a href="<?php echo esc_url(home_url('/service/human-resources-solution')); ?>">女性のキャリア形成サポート部門</a></p>
+                                                        <p><a href="<?php echo esc_url(home_url('/service/human-resources-solution')); ?>">グローバル人材採用部門</a></p>
+                                                        <p><a href="<?php echo esc_url(home_url('/service/human-resources-solution')); ?>">湯灌師・納棺師（葬祭業）人材紹介部門</a></p>
                                                     </h4>
                                                 </div>
                                             </div>
