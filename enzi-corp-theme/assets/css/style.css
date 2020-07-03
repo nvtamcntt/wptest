@@ -1518,19 +1518,71 @@ nav ul li.parent_menu ul.sub_menu {
   border-color: #fff;
 }
 /* Customize */
+nav ul.sub_menu li:hover {
+  background: #6c80a0;
+}
+nav ul.sub_menu li:hover a {
+  color: #fff !important;
+}
+nav ul li.parent_menu2 a.parent_link {
+  text-decoration: none !important;
+}
+
 nav ul li.parent_menu2:hover .sub_menu2 {
   position: absolute;
   display: block;
   margin-top: -35px;
   margin-left: 185px;
-  background: #fff;
+  background: #6c80a0;
 }
 
 nav ul li.parent_menu2 ul.sub_menu2 {
   display: none;
   border: 1px solid #eee;
 }
+
+nav ul li.parent_menu2 ul.sub_menu2 li {
+  float: inherit;
+}
+nav ul li.parent_menu2 ul.sub_menu2 li:hover {
+  float: inherit;
+  background: #43495a !important;
+}
+nav ul li.parent_menu2 ul.sub_menu2 li a {
+  text-align: left !important;
+}
+
 @media screen and (max-width: 768px) {
+  nav ul.sub_menu li:hover {
+    background: #fff;
+  }
+  nav ul.sub_menu li:hover a {
+    color: #6c80a0 !important;
+  }
+  nav ul li.parent_menu2 a.parent_link {
+    text-decoration: none !important;
+  }
+
+  nav ul li.parent_menu2:hover .sub_menu2 {
+    position: absolute;
+    display: block;
+    margin-top: -35px;
+    margin-left: 185px;
+    background: #fff;
+  }
+
+  nav ul li.parent_menu2 ul.sub_menu2 {
+    display: none;
+    border: 1px solid #eee;
+  }
+
+  nav ul li.parent_menu2 ul.sub_menu2 li {
+    float: inherit;
+  }
+  nav ul li.parent_menu2 ul.sub_menu2 li:hover {
+    float: inherit;
+    background: #fff !important;
+  }
   nav ul li.parent_menu2:hover .sub_menu2 {
     position: initial;
     display: block;
@@ -1575,6 +1627,7 @@ nav ul li.parent_menu ul.sub_menu li a {
   nav ul li.parent_menu ul.sub_menu {
     width: 100%;
     border: 0;
+    background: #fff;
     position: static;
     -webkit-transform: inherit;
     transform: inherit;
@@ -3138,6 +3191,7 @@ div.service section.service_content ul.service_list li div.inner h4 {
 
 div.service section.service_content ul.service_list li div.inner h4 span {
   padding-top: 18px;
+  font-size: 16px !important;
   font-weight: 300;
   display: block;
   letter-spacing: 0.2em;
