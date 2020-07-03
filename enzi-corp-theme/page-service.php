@@ -13,7 +13,7 @@
 
 
             <!-- //// HEADER START //// -->
-            <?php get_sidebar( 'header' ); ?>
+            <?php get_sidebar('header'); ?>
             <!-- //// HEADER END //// -->
 
 
@@ -26,7 +26,7 @@
                     <h1 class="ttl">service<span>サービス</span></h1>
 
                     <!-- パンくずリスト START -->
-                    <?php get_template_part( 'breadcrumbs' ); ?>
+                    <?php get_template_part('breadcrumbs'); ?>
                     <!-- パンくずリスト END -->
                 </div>
             </div>
@@ -49,17 +49,22 @@
                                 <ul class="service_list">
                                     <li>
                                         <div class="inner">
-                                            <a href="<?php echo esc_url( home_url( '/service/human-resources-solution' ) ); ?>">
+                                            <div>
                                                 <div class="image_cont">
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/content/service/img_list_human.jpg" alt="人材ソリューション" class="obj_image">
+                                                    <h4>HUMAN RESOURCES<br>SOLUTION
+                                                        <span>人材ソリューション</span>
+                                                        <p><a href="<?php echo esc_url(home_url('/service/human-resources-solution')); ?>">女性のキャリア形成サポート部門</a></p>
+                                                        <p><a href="<?php echo esc_url(home_url('/service/human-resources-solution')); ?>">グローバル人材採用部門</a></p>
+                                                        <p><a href="<?php echo esc_url(home_url('/service/human-resources-solution')); ?>">湯灌師・納棺師（葬祭業）人材紹介部門</a></p>
+                                                    </h4>
                                                 </div>
-                                                <h4>HUMAN RESOURCES<br>SOLUTION<span>人材ソリューション</span></h4>
-                                            </a>
+                                            </div>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="inner">
-                                            <a href="<?php echo esc_url( home_url( '/service/it-solution' ) ); ?>">
+                                            <a href="<?php echo esc_url(home_url('/service/it-solution')); ?>">
                                                 <div class="image_cont">
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/content/service/img_list_it.jpg" alt="ITソリューション" class="obj_image">
                                                 </div>
@@ -69,7 +74,7 @@
                                     </li>
                                     <li>
                                         <div class="inner">
-                                            <a href="<?php echo esc_url( home_url( '/service/construct' ) ); ?>">
+                                            <a href="<?php echo esc_url(home_url('/service/construct')); ?>">
                                                 <div class="image_cont">
                                                     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/content/service/img_list_construct.jpg" alt="施工" class="obj_image">
                                                 </div>
@@ -83,7 +88,7 @@
                     </section>
 
                     <!-- CTA END -->
-                    <?php get_template_part( 'part-contact' ); ?>
+                    <?php get_template_part('part-contact'); ?>
                     <!-- CTA END -->
 
                 </main>
@@ -93,7 +98,7 @@
             </div>
 
             <!-- //// FOOTER START //// -->
-            <?php get_sidebar( 'footer' ); ?>
+            <?php get_sidebar('footer'); ?>
             <!-- //// FOOTER END //// -->
 
 

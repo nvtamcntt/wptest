@@ -3,12 +3,11 @@
 ootpl_contact_setting( 'contact' );
 // メールクラス
 $cls = new FM_Mail_Confirm();
-var_dump($cls);
 ?>
 
 <!-- 実フォーム -->
 <form id="fm_action" name="fm_action" method="post">
-    <?php var_dump($cls->getInput()); ?>
+    <?php $cls->getInput(); ?>
 </form>
 
 <?php if ( ! $cls->checkError() ) : ?>

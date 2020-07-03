@@ -63,7 +63,6 @@ add_action( 'init', 'ootpl_contact_create_menu' );
 
 // 表側
 function ootpl_contact_setting( $formID=null ) {
-    
     if ( ! $formID ) return false;
     
     // パラメータ
@@ -81,15 +80,14 @@ function ootpl_contact_setting( $formID=null ) {
             )
         )
     );
-
     // SQL
     $query = new WP_Query( $args );
 
     if ( $query->have_posts() ) {
         while ( $query->have_posts() ) {
-            
-            $query->the_post();
-            
+           
+            $con = $query->the_post();
+
             $val_name           = get_post_meta( get_the_ID(), 'ootpl_my_contact_name',         true );
             $val_mail           = get_post_meta( get_the_ID(), 'ootpl_my_contact_mail',         true );
             $val_bcc_mail       = get_post_meta( get_the_ID(), 'ootpl_my_contact_bcc_mail',     true );
@@ -117,24 +115,48 @@ function ootpl_contact_setting( $formID=null ) {
         $val_bcc_flag = false;
     }
 
+    $val_name_default = 'ENZI';
+    $val_mail_default = 'info@enzi.co.jp';
+    $val_admin_title_default = 'ホームページよりお問い合わせがありました';
+    $val_admin_body_default = 'お客様よりお問い合わせをいただきました。
+ご対応をよろしくお願いいたします。
+    
+-----------------------------
+[お問い合わせ件名] [fm_select1]
+[会社名] [fm_company]
+[お名前] [fm_name]
+[ふりがな] [fm_kana]
+[電話番号] [fm_tel]
+[メールアドレス] [fm_mail] 
+[住所] 〒[postcode1]-[postcode2] [address2][address3]
+[お問い合わせ内容] [fm_comment]
+-----------------------------';
+    $val_reply_title_default = 'ホームページよりお問い合わせがありました';
+    $val_reply_body_default = 'このたびは株式会社エンジへ
+お問い合わせいただき、誠にありがとうございます。
+お問い合わせ内容につきましては、
+早急に担当者よりご連絡を差し上げます。
+また、ご返信に時間がかかる場合がございますのでご了承ください。
+誠に恐縮ではございますが、
+今しばらくお待ち下さいますよう、お願い申し上げます。';
     // 差出人名称
-    define( 'FM_MAIL_ADMIN_NAME', $val_name );
+    define( 'FM_MAIL_ADMIN_NAME', (isset( $val_name ) && $val_name != '' ) ? $val_name : $val_name_default);
     // 差出人メールアドレス
-    define( 'FM_MAIL_ADMIN_MAIL', $val_mail );
+    define( 'FM_MAIL_ADMIN_MAIL', (isset( $val_mail ) && $val_mail != '' ) ? $val_mail : $val_mail_default);
     // システムエラー用メールアドレス
-    define( 'FM_MAIL_ERR_MAIL',   $val_mail );
+    define( 'FM_MAIL_ERR_MAIL', (isset( $val_mail ) && $val_mail != '' ) ? $val_mail : $val_mail_default);
     // 管理者へメール CC
-    define( 'FM_MAIL_ADMIN_MAIL_BCC',     $val_bcc_mail );
+    define( 'FM_MAIL_ADMIN_MAIL_BCC', $val_bcc_mail);
     // 管理者へメール CCフラグ
     define( 'FM_MAIL_ADMIN_MAIL_BCC_FLG', $val_bcc_flag );
     // 管理者へメール題名
-    define( 'FM_MAIL_ADMIN_TITLE', $val_admin_title );
+    define( 'FM_MAIL_ADMIN_TITLE', (isset( $val_admin_title ) && $val_admin_title != '' ) ? $val_admin_title : $val_admin_title_default);
     // 管理者へメール内容
-    define( 'FM_MAIL_ADMIN_BODY',  $val_admin_body );
+    define( 'FM_MAIL_ADMIN_BODY', (isset( $val_admin_body ) && $val_admin_body != '' ) ? $val_admin_body : $val_admin_body_default);
     // 自動返信メール題名
-    define( 'FM_MAIL_USER_TITLE',  $val_reply_title );
+    define( 'FM_MAIL_USER_TITLE',  (isset( $val_reply_title ) && $val_reply_title != '' ) ? $val_reply_title : $val_reply_title_default);
     // 自動返信メール内容
-    define( 'FM_MAIL_USER_BODY',   $val_reply_body );
+    define( 'FM_MAIL_USER_BODY',   (isset( $val_reply_body ) && $val_reply_body != '' ) ? $val_reply_body : $val_reply_body_default);
     // フォームの値
     define( 'FM_MAIL_POST_STR',    $_post_str );
 

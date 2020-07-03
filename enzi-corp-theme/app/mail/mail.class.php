@@ -70,7 +70,7 @@ class FM_Mail {
 
         // POST 値
         if ( $_POST ) {
-            foreach ($_post_arr as $key => $value) {
+            foreach ($_POST as $key => $value) {
                 // 入力された値
                 $val = isset( $_POST[ $key ] ) ? $_POST[ $key ] : '';
 
@@ -220,8 +220,7 @@ class FM_Mail {
         list( $_subject, $_content ) = $this->mailFormat( $this->data );
 
         // WPに保存する
-        //$this->saveWP( $this->data );
-
+        $this->saveWP( $this->data );
         // 管理者へメール送信
         if ( $this->mail_utf8 (
             FM_MAIL_ADMIN_MAIL,
@@ -267,7 +266,6 @@ class FM_Mail {
                     }
                 }
             }
-
             return wp_mail( $to, $subject, $message, $headers, $attachments );
 
         }
@@ -965,8 +963,9 @@ class FM_Mail_Confirm extends FM_Mail {
         $_post_arr = $this->_post_arr;
 
         $html = array();
+
         if ( $_POST ) {
-            foreach ( $_post_arr as $key => $value ) {
+            foreach ( $_POST as $key => $value ) {
 
                 $val = isset( $_POST[ $key ] ) ? $_POST[ $key ] : '';
 

@@ -32,6 +32,7 @@ $cls->view();
     <!--<meta name="viewport" content="width=1320"> -->
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/extend.css">
     <!--[if IE 7 ]> <html class="ie7"> <![endif]--> 
     <!--[if IE 8 ]> <html class="ie8"> <![endif]--> 
     <!--[if IE 9 ]> <html class="ie9"> <![endif]-->
